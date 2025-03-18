@@ -1,0 +1,651 @@
+{
+	"info": {
+		"_postman_id": "70274c42-9200-4f71-b057-15015618dbf4",
+		"name": "ExerciseRestServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27784272"
+	},
+	"item": [
+		{
+			"name": "addExercise",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"students\":[\"giulio.perillo@studenti.unina.it\",\"giovanni.perillo@studenti.unina.it\"],\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-01-10T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\",\n    \"teamId\":48\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/exercise",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"exercise"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"students\":[\"giulio.perillo@studenti.unina.it\",\"giovanni.perillo@studenti.unina.it\"],\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-01-10T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\",\n    \"teamId\":48\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/exercise",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"exercise"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Jan 2025 07:52:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "getExercises",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"students\":[\"giulio.perillo@studenti.unina.it\"],\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-01-01T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/exercise?isValid=true",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"exercise"
+					],
+					"query": [
+						{
+							"key": "isValid",
+							"value": "true"
+						},
+						{
+							"key": "teamId",
+							"value": "6",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"students\":[\"giulio.perillo@studenti.unina.it\"],\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-01-01T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/exercise?isValid=false",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"exercise"
+							],
+							"query": [
+								{
+									"key": "teamId",
+									"value": "48",
+									"disabled": true
+								},
+								{
+									"key": "isValid",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Jan 2025 08:12:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"6795e1b4fcdc420d236a7883\",\n        \"goalTypes\": [\n            \"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"\n        ],\n        \"creationTime\": \"2025-01-01T12:30:01Z\",\n        \"expiryTime\": \"2025-01-10T12:30:01Z\",\n        \"startingTime\": \"2025-01-01T12:30:01Z\",\n        \"teamId\": 48,\n        \"description\": \"ciao\"\n    },\n    {\n        \"id\": \"6795e9c23196cd3ba902c07c\",\n        \"goalTypes\": [\n            \"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"\n        ],\n        \"creationTime\": \"2025-01-01T12:30:01Z\",\n        \"expiryTime\": \"2025-01-10T12:30:01Z\",\n        \"startingTime\": \"2025-01-01T12:30:01Z\",\n        \"teamId\": 48,\n        \"description\": \"ciao\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getExercise(id)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"students\":[\"giulio.perillo@studenti.unina.it\"],\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-01-01T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/exercise/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"exercise",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6796ad4503ae882063f80fcc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"students\":[\"giulio.perillo@studenti.unina.it\"],\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-01-01T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/exercise/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"exercise",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67953ed965b47d7e426aad6f"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Jan 2025 07:52:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"67953ed965b47d7e426aad6f\",\n    \"goalTypes\": [\n        \"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"\n    ],\n    \"creationTime\": \"2025-01-01T12:30:01Z\",\n    \"expiryTime\": \"2025-02-01T12:30:01Z\",\n    \"startingTime\": \"2025-01-01T12:30:01Z\",\n    \"teamId\": null,\n    \"description\": \"Nuova descrizione\",\n    \"goals\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteExercise(id)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"students\":[\"giulio.perillo@studenti.unina.it\"],\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-01-01T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/exercise/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"exercise",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67968f8b03ae882063f80fc7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "deleteExercise(id)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"students\":[\"giulio.perillo@studenti.unina.it\"],\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-01-01T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/exercise/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"exercise",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "679542440fff9150dde99c2e"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Jan 2025 08:07:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"679542440fff9150dde99c2e\",\n    \"goalTypes\": [\n        \"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"\n    ],\n    \"creationTime\": \"2025-01-01T12:30:01Z\",\n    \"expiryTime\": \"2025-02-01T12:30:01Z\",\n    \"startingTime\": \"2025-01-01T12:30:01Z\",\n    \"teamId\": 48,\n    \"description\": \"Cambiata descrizione\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateExercise(id)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"students\":[\"alfonso.perillo@studenti.unina.it\"]\n//    \"expiryTime\": \"2025-02-01T12:30:01.000Z\",\n//\"description\":\"Nuova descrizione\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/exercise/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"exercise",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6796ad4503ae882063f80fcc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"students\":[\"sandro.perillo@studenti.unina.it\", \"bernardo.tatangelo@studenti.unina.it\"],\n    \"expiryTime\": \"2025-02-01T12:30:01.000Z\",\n    \"description\":\"Nuova descrizione\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/exercise/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"exercise",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67953ed965b47d7e426aad6f"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Jan 2025 08:06:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"67953ed965b47d7e426aad6f\",\n    \"goalTypes\": [\n        \"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"\n    ],\n    \"creationTime\": \"2025-01-01T12:30:01Z\",\n    \"expiryTime\": \"2025-02-01T12:30:01Z\",\n    \"startingTime\": \"2025-01-01T12:30:01Z\",\n    \"teamId\": null,\n    \"description\": \"Nuova descrizione\"\n}"
+				}
+			]
+		},
+		{
+			"name": "createGoal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\":10000,\n    \"expectedScore\": 25,\n    \"exampleInteger\" : \"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/goal",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"goal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGoals",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\":1,\n    \"playerId\":\"giulio.perillo@studenti.unina.it\",\n    \"completition\":2,\n    \"expiryTime\":\"2025-02-15T23:59:59.000Z\",\n    \"creationTime\":\"2025-01-10T12:15:00.000Z\",\n    \"expectedScore\": 50,\n    \"className\" : \"OutputFormat\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/goal",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"goal"
+					],
+					"query": [
+						{
+							"key": "playerId",
+							"value": "anna.tatangelo@studenti.unina.com",
+							"disabled": true
+						},
+						{
+							"key": "assignmentId",
+							"value": "679542440fff9150dde99c2e",
+							"disabled": true
+						},
+						{
+							"key": "isCompleted",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "isValid",
+							"value": "false",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\":1,\n    \"playerId\":\"giulio.perillo@studenti.unina.it\",\n    \"completition\":2,\n    \"expiryTime\":\"2025-02-15T23:59:59.000Z\",\n    \"creationTime\":\"2025-01-10T12:15:00.000Z\",\n    \"expectedScore\": 50,\n    \"className\" : \"OutputFormat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/goal?assignmentId=679542440fff9150dde99c2e",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"goal"
+							],
+							"query": [
+								{
+									"key": "playerId",
+									"value": "anna.tatangelo@studenti.unina.com",
+									"disabled": true
+								},
+								{
+									"key": "assignmentId",
+									"value": "679542440fff9150dde99c2e"
+								},
+								{
+									"key": "isCompleted",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "isValid",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Jan 2025 08:05:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"6795be38cf3bc36b2135c662\",\n        \"assignmentId\": \"679542440fff9150dde99c2e\",\n        \"playerId\": \"giulio.perillo@studenti.unina.it\",\n        \"type\": 1,\n        \"completition\": 0,\n        \"expectedScore\": 25,\n        \"className\": \"OutputFormat\"\n    },\n    {\n        \"id\": \"6795be38cf3bc36b2135c663\",\n        \"assignmentId\": \"679542440fff9150dde99c2e\",\n        \"playerId\": \"anna.tatangelo@studenti.unina.it\",\n        \"type\": 1,\n        \"completition\": 100,\n        \"expectedScore\": 25,\n        \"className\": \"OutputFormat\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8001",
+			"type": "string"
+		}
+	]
+}

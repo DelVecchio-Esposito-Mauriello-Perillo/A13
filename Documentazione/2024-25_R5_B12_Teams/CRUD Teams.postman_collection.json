@@ -1,0 +1,776 @@
+{
+	"info": {
+		"_postman_id": "43ebe993-00a4-45d2-9867-b1a62aa6115b",
+		"name": "CRUD Teams",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27784272"
+	},
+	"item": [
+		{
+			"name": "List Teams",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/team",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/team list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/team",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"team"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 15:32:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"APC\",\n        \"description\": \"Un corso molto interessante\",\n        \"id\": 1\n    },\n    {\n        \"name\": \"SAD\",\n        \"description\": \"Non ci si annoia mai\",\n        \"id\": 4\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create Team",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Architettura dei Sistemi Integrati\",\n    \"description\" : \"Acchio a dove metti le dita\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/team",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/team created",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Software Architecture Design\",\n    \"description\" : \"Nice\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/team",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"team"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Dec 2024 21:06:35 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Software Architecture Design\",\n    \"description\": \"Nice\",\n    \"id\": 11\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Student",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ID\":1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/team/:ID/students",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team",
+						":ID",
+						"students"
+					],
+					"variable": [
+						{
+							"key": "ID",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Student",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ID\":5}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/team/:ID/students",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team",
+						":ID",
+						"students"
+					],
+					"variable": [
+						{
+							"key": "ID",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Team",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/team/:ID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team",
+						":ID"
+					],
+					"variable": [
+						{
+							"key": "ID",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Team",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    //\"name\" : \"rinominato\",\n    //\"description\":\"patched\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/team/:ID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team",
+						":ID"
+					],
+					"query": [
+						{
+							"key": "cane",
+							"value": "ciao",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "ID",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Team",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ID\":2}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/team/:ID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team",
+						":ID"
+					],
+					"variable": [
+						{
+							"key": "ID",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "addStudent Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"ID\":2}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/team/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"team",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 15:30:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"APC\",\n    \"description\": \"Un corso molto interessante\",\n    \"studentList\": [\n        {\n            \"ID\": 3,\n            \"name\": \"giovanni\",\n            \"surname\": \"perillo\",\n            \"email\": \"giovanni.perillo@studenti.unina.it\",\n            \"password\": \"$2a$10$6S8NF/aKsBrJ0sYpR7S8QOD8Eu9ENK8W0bCsSAsSoDkz9mnKszLci\",\n            \"isRegisteredWithFacebook\": false,\n            \"isRegisteredWithGoogle\": false,\n            \"studies\": \"BSc\",\n            \"resetToken\": null,\n            \"registeredWithGoogle\": false,\n            \"registeredWithFacebook\": false,\n            \"id\": 3\n        },\n        {\n            \"ID\": 2,\n            \"name\": \"giulio\",\n            \"surname\": \"perillo\",\n            \"email\": \"giulio.perillo@studenti.unina.it\",\n            \"password\": \"$2a$10$Cxa/t1TO3PcKqL6svyKkoOHaiXBUMYuOg4SO0YyY4HchUg/7eUM8G\",\n            \"isRegisteredWithFacebook\": false,\n            \"isRegisteredWithGoogle\": false,\n            \"studies\": \"BSc\",\n            \"resetToken\": null,\n            \"registeredWithGoogle\": false,\n            \"registeredWithFacebook\": false,\n            \"id\": 2\n        }\n    ],\n    \"id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "addExercise",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-02-10T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/team/:ID/exercise",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team",
+						":ID",
+						"exercise"
+					],
+					"variable": [
+						{
+							"key": "ID",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"goalTypes\":[\"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"],\n    \"expiryTime\": \"2025-01-10T12:30:01.000Z\",\n    \"creationTime\": \"2025-01-01T12:30:01.000Z\",\n    \"startingTime\": \"2025-01-01T12:30:01.000Z\",\n    \"description\":\"ciao\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/team/:ID/exercise",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"team",
+								":ID",
+								"exercise"
+							],
+							"variable": [
+								{
+									"key": "ID",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6796f8e8a859267cb0807ca7\",\n    \"goalTypes\": [\n        \"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"\n    ],\n    \"creationTime\": \"2025-01-01T12:30:01Z\",\n    \"expiryTime\": \"2025-01-10T12:30:01Z\",\n    \"startingTime\": \"2025-01-01T12:30:01Z\",\n    \"teamId\": 6,\n    \"description\": \"ciao\"\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteExercise",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/team/:tid/exercise/:mid",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team",
+						":tid",
+						"exercise",
+						":mid"
+					],
+					"variable": [
+						{
+							"key": "tid",
+							"value": "2"
+						},
+						{
+							"key": "mid",
+							"value": "67968fc803ae882063f80fca"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getExercise",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/team/:tid/exercise/:mid",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team",
+						":tid",
+						"exercise",
+						":mid"
+					],
+					"variable": [
+						{
+							"key": "tid",
+							"value": "7"
+						},
+						{
+							"key": "mid",
+							"value": "679cc58ff1caca39c0515dd5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/team/:tid/exercise/:mid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"team",
+								":tid",
+								"exercise",
+								":mid"
+							],
+							"variable": [
+								{
+									"key": "tid",
+									"value": "2"
+								},
+								{
+									"key": "mid",
+									"value": "67968fc803ae882063f80fca"
+								}
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6796f3bba859267cb0807ca3\",\n    \"goalTypes\": [\n        \"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"\n    ],\n    \"creationTime\": \"2025-01-01T12:30:01Z\",\n    \"expiryTime\": \"2025-01-10T12:30:01Z\",\n    \"startingTime\": \"2025-01-01T12:30:01Z\",\n    \"teamId\": 3,\n    \"description\": \"ciao\",\n    \"goals\": [\n        {\n            \"id\": \"6796f3bba859267cb0807ca4\",\n            \"assignmentId\": \"6796f3bba859267cb0807ca3\",\n            \"playerId\": \"mattia.adamo@studenti.unina.it\",\n            \"type\": 1,\n            \"completition\": 0,\n            \"expectedScore\": 25,\n            \"className\": \"OutputFormat\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "patchExercise",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n    \"expiryTime\": \"2025-02-01T12:30:01.000Z\",\n    \"description\":\"Nuova descrizione\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/team/:tid/exercise/:mid",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"team",
+						":tid",
+						"exercise",
+						":mid"
+					],
+					"variable": [
+						{
+							"key": "tid",
+							"value": "2"
+						},
+						{
+							"key": "mid",
+							"value": "6796ad4503ae882063f80fcc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "patchExercise",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"expiryTime\": \"2025-02-01T12:30:01.000Z\",\n    \"description\":\"Nuova descrizione\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/team/:tid/exercise/:mid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"team",
+								":tid",
+								"exercise",
+								":mid"
+							],
+							"variable": [
+								{
+									"key": "tid",
+									"value": "2"
+								},
+								{
+									"key": "mid",
+									"value": "6796ad4503ae882063f80fcc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6796ad4503ae882063f80fcc\",\n    \"goalTypes\": [\n        \"{\\\"type\\\":1,\\\"expectedScore\\\":25,\\\"className\\\" : \\\"OutputFormat\\\"}\"\n    ],\n    \"creationTime\": \"2025-01-01T12:30:01Z\",\n    \"expiryTime\": \"2025-01-10T12:30:01Z\",\n    \"startingTime\": \"2025-01-01T12:30:01Z\",\n    \"teamId\": 2,\n    \"description\": \"ciao\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8081",
+			"type": "string"
+		}
+	]
+}
